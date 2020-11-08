@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Helpers\ExternalApiHelper;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,4 +35,9 @@ Route::get('/', function () {
 
 Route::get('/b', function () {
     var_dump(config('app.var1','default'));
+});
+
+Route::get('/c', function () { // testing bind
+    $apiHelper = new ExternalApiHelper();
+    echo $apiHelper->foo();
 });
