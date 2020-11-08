@@ -4,8 +4,16 @@ namespace App\Helpers;
 
 class ExternalApiHelper {
 
-    public function foo() {
-        return 'bar';
+    private $foo;
+
+    public function __construct($foo)
+    {
+        $this->foo = $foo;
+    }
+
+    public function foo()
+    {
+        return $this->foo;
     }
 
 
