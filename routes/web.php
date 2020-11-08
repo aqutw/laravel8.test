@@ -22,6 +22,16 @@ Route::get('/', function () {
     var_dump(App::environment());
     var_dump(App::environment('local'));
     var_dump(App::environment(['local', 'staging']));
+    var_dump(config('app.env'));
+    var_dump(config('app.timezone'));
+    var_dump(config('app.timezoneXXX', 'default_value_here'));
+
+    config(['app.var1' => 'value1']); // setter
+    var_dump(config('app.var1'));
 
     return view('welcome');
+});
+
+Route::get('/b', function () {
+    var_dump(config('app.var1','default'));
 });
