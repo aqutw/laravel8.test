@@ -38,5 +38,8 @@ Route::get('/b', function () {
 });
 
 Route::get('/c', function () { // testing bind
-    echo app(ExternalApiHelper::class)->foo();
+    $o = ExternalApiHelper::setFoo('hi, router');
+    $o2 = ExternalApiHelper::setFoo('hi, router2');
+    echo $o->foo();
+    echo $o2->foo();
 });

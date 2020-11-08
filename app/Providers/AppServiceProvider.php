@@ -14,8 +14,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(ExternalApiHelper::class, function(){
-            return new ExternalApiHelper('hi, app!');
+        $this->app->singleton(ExternalApiHelper::class, function(){
+            return new ExternalApiHelper();
         });
     }
 
